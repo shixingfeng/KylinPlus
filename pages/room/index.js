@@ -13,29 +13,36 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     inputMarBot:false,
     room_data:[
-      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
-      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"]
-    ]
+      ["a0","COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a1","COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a2","COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a3","COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a4","COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a5","COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a6","COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a7","COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a8","COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a9","COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["a10","COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+    ],
+    cate:"a10",
+    scrollTop:0,
+    DeviceHeight:"0rpx",
   },
   //事件处理函数
   onLoad: function (option) {
+    var DeviceHeight_now = wx.getSystemInfoSync().windowHeight
+    var DeviceWidth_now = wx.getSystemInfoSync().windowWidth
+    var pixelRatio = wx.getSystemInfoSync().pixelRatio
+    DeviceHeight_now = DeviceHeight_now * (750 / DeviceWidth_now) - 100
+    this.setData({
+      DeviceHeight: DeviceHeight_now+"rpx",
+    })
+    console.log(DeviceHeight_now)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        hasUserInfo: true,
       })
     } else if (this.data.canIUse){
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -172,5 +179,22 @@ Page({
       }
     }
   },
+  scrollTouchAction:function(e){
+    console.log(e)
+    var scroll_view_data = wx.createSelectorQuery().selectViewport().scrollOffset(function(res){
+        res.id      // 节点的ID
+        res.dataset // 节点的dataset
+        res.scrollLeft // 节点的水平滚动位置
+        res.scrollTop  // 节点的竖直滚动位置
+      }).exec()
+    console.log(scroll_view_data)
+  },
+  scroll: function(e){
+    console.log("scroll")
+    this.setData({
+      scrollTop:e.detail.scrollTop
+    })
+    console.log(e)
 
+  }
 })

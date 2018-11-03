@@ -5,7 +5,9 @@ page{
   overflow: hidden;
 }
 html{
+  height: 100%;
   background-color:#f2f2f2;
+  overflow: hidden;
 }
 .input_tools{
   position: fixed;
@@ -56,6 +58,13 @@ html{
 }
 
 .comments_area{
+    padding-bottom:120rpx;
+    position: /*relative*/;
+    overflow-y: auto;
+    -webkit-overflow-scrolling:touch;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 .comment_line{
@@ -106,6 +115,7 @@ html{
     max-width: calc(75% - 100rpx);
     margin-left: 125rpx;
     position: relative;
+    padding-bottom: 10rpx;
 }
 .comment_line_content>.comment_line_content_main{
     background-color: white;
@@ -138,4 +148,8 @@ html{
     box-shadow: 2rpx 2rpx 0rpx 0rpx rgba(200,200,200,1) inset;
     left: -10rpx;
     top: 28rpx;
+}
+.room{
+    height: 100%;
+    overflow: hidden;
 }
