@@ -34,7 +34,7 @@ Page({
     var DeviceHeight_now = wx.getSystemInfoSync().windowHeight
     var DeviceWidth_now = wx.getSystemInfoSync().windowWidth
     var pixelRatio = wx.getSystemInfoSync().pixelRatio
-    DeviceHeight_now = DeviceHeight_now * (750 / DeviceWidth_now) - 100
+    DeviceHeight_now = DeviceHeight_now * (750 / DeviceWidth_now) - 120
     this.setData({
       DeviceHeight: DeviceHeight_now+"rpx",
     })
@@ -159,6 +159,16 @@ Page({
     this.setData({
       inputMarBot: false
     })
+
+    const query = wx.createSelectorQuery()
+    query.select('#room').boundingClientRect()
+    query.selectViewport().scrollOffset()
+    query.exec(function(res){
+      res[0].top       // #the-id节点的上边界坐标
+      res[1].scrollTop // 显示区域的竖直滚动位置
+      console.log(res)
+    })
+
   },
   onShareAppMessage:function (res) {
     return {
@@ -180,21 +190,20 @@ Page({
     }
   },
   scrollTouchAction:function(e){
-    console.log(e)
-    var scroll_view_data = wx.createSelectorQuery().selectViewport().scrollOffset(function(res){
-        res.id      // 节点的ID
-        res.dataset // 节点的dataset
-        res.scrollLeft // 节点的水平滚动位置
-        res.scrollTop  // 节点的竖直滚动位置
-      }).exec()
-    console.log(scroll_view_data)
+    // var scrollTopNow = this.data.scrollTop
+    // if(this.data.scrollTop<=0){
+    //   console.log("scrollnow:"+e.detail.scrollTop)
+    //   scrollTopNow = scrollTopNow + 1
+    //   this.setData({
+    //     scrollTop:scrollTopNow
+    //   })
+    // }
   },
   scroll: function(e){
-    console.log("scroll")
+    console.log("scroll:"+e.detail.scrollTop)
     this.setData({
       scrollTop:e.detail.scrollTop
     })
     console.log(e)
-
   }
 })
