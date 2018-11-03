@@ -12,6 +12,23 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     inputMarBot:false,
+    room_data:[
+      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","你好","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好v","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"],
+      ["COMMENT","1","用户名","http://www.hotpoor.com/static/img/default_user.jpg","2018年11月3日 10:00"]
+    ]
   },
   //事件处理函数
   onLoad: function (option) {

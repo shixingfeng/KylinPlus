@@ -11,16 +11,16 @@ Page({
       "room_ids":["MAGICCRYSTAL","MAGICCRYSTAL1"],
       "room_info":{
         "MAGICCRYSTAL":{
-          "room_title":"魔晶小程序粉丝团",
-          "room_description":"魔晶小程序粉丝团，关注《创业时代》，为主创打Call！",
+          "room_title":"麒麟Plus粉丝团",
+          "room_description":"麒麟Plus粉丝团，关注《创业时代》，为主创打Call！",
           "room_updatetime":"1539666746",
           "room_notification":false,
           "room_line_content_count":1000,
           "room_line_img_url":"http://image.hotpoor.org/2dd2c53e7c654c66b398e574848d4c34_bf31e4a8228408536fceb70a49495865?imageView2/2/w/200"
         },
         "MAGICCRYSTAL1":{
-          "room_title":"魔晶小程序粉丝团002",
-          "room_description":"魔晶小程序粉丝团002，关注《创业时代》，为主创打Call！",
+          "room_title":"麒麟Plus粉丝团002",
+          "room_description":"麒麟Plus粉丝团，关注《创业时代》，为主创打Call！",
           "room_updatetime":"1539666746",
           "room_notification":true,
           "room_line_content_count":10,

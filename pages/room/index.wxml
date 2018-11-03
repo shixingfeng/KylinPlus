@@ -1,9 +1,24 @@
 <!--index.wxml-->
 <wxs src="index.wxs" module="tools" />
 <view>
-  <view>
-    <view>头像·名称</view>
-    <view>内容l</view>
+  <view class="comments_area">
+    <view class="comment_line" wx:for="{{room_data}}" wx:for-index="idx" wx:for-item="itemName">
+      <view class="comment_line_time">
+        <text>{{itemName[4]}}</text>
+      </view>
+      <view class="comment_line_user">
+        <image class="user_image" src="{{itemName[3]}}"></image>
+        <view class="comment_line_name">{{itemName[2]}}</view>
+      </view>
+    
+      <view class="comment_line_content">
+        <!-- <view class="comment_line_content_main_bottom"></view> -->
+        <scroll-view class="comment_line_content_main" style="{{itemName[1].length<13?'width:calc(32rpx * '+itemName[1].length+')':'width:auto'}}">
+          <text>{{itemName[1]}}</text>
+        </scroll-view>
+        <view class="comment_line_content_main_top"></view>
+      </view>
+    </view>
   </view>
   <view class="input_tools" style="{{inputMarBot?'bottom:5rpx':'bottom:0rpx'}}">
       <view class="input_tool tool_word">
