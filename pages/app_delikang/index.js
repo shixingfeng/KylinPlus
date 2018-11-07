@@ -28,6 +28,10 @@ Page({
     cate:"a10",
     scrollTop:0,
     DeviceHeight:"0rpx",
+    currentPage:"index_page",
+    indexBtnSrc:"../../images/index_selected.png",
+    reservationBtnSrc:"../../images/ask_default.png",
+    meBtnSrc:"../../images/me_default.png",
   },
   //事件处理函数
   onLoad: function (option) {
@@ -205,5 +209,30 @@ Page({
       scrollTop:e.detail.scrollTop
     })
     console.log(e)
-  }
+  },
+
+  showPage:function(e){
+    console.log(e)
+    var aim_page = e.currentTarget.dataset.page
+    if (aim_page=="index_page"){
+      var indexBtnSrc ="../../images/index_selected.png"
+      var reservationBtnSrc="../../images/ask_default.png"
+      var meBtnSrc="../../images/me_default.png"
+    }else if(aim_page=="index_reservation_page"){
+      var indexBtnSrc ="../../images/index_default.png"
+      var reservationBtnSrc="../../images/ask_selected.png"
+      var meBtnSrc="../../images/me_default.png"
+    }else if(aim_page=="index_me_page"){
+      var indexBtnSrc ="../../images/index_default.png"
+      var reservationBtnSrc="../../images/ask_default.png"
+      var meBtnSrc="../../images/me_selected.png"
+    }
+    this.setData({
+      currentPage:aim_page,
+      indexBtnSrc:indexBtnSrc,
+      reservationBtnSrc:reservationBtnSrc,
+      meBtnSrc:meBtnSrc
+    })
+  },
+  
 })

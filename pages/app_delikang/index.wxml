@@ -1,0 +1,121 @@
+<!--index.wxml-->
+<wxs src="index.wxs" module="tools" />
+<!-- 病人端 -->
+ <scroll-view class="customer_page">
+    <view class="index_page" style="{{currentPage=='index_page'?'':'display:none'}}">
+        <view>我来问</view>
+        <view>大家问</view>
+        <view>小百科</view>
+        <view>在线坐诊</view>
+    </view>
+    <view class="index_reservation_page" style="{{currentPage=='index_reservation_page'?'':'display:none'}}">
+        <view>服务选择</view>
+        <view>预约订单</view>
+        <view>支付</view>
+        <view>售后处理</view>
+        <view>评价</view>
+    </view>
+    <view class="index_me_page" style="{{currentPage=='index_me_page'?'':'display:none'}}">
+        <view>个人中心</view>
+        <view>我的病历</view>
+        <view>治疗方案</view>
+        <view>我的账户</view>
+        <view>邀请好友</view>
+        <view>消息提醒</view>
+        <view>信息列表</view>
+    </view>
+</scroll-view>
+
+<view class="index_btns">
+    <view data-page="index_page" class="index_btn" bindtap="showPage">
+        <view>
+            <image class="index_btn_pic" src="{{indexBtnSrc}}"></image>
+        </view>
+        <view>首页</view>    
+    </view>
+    <view data-page="index_reservation_page" class="index_btn" bindtap="showPage">
+        <view class="index_btn_pic_reservation">
+            <view class="index_btn_pic_bgcolor">
+                <image src="{{reservationBtnSrc}}"></image>
+            </view>
+        </view>
+        <view>预约</view>
+    </view>
+    <view data-page="index_me_page" class="index_btn" bindtap="showPage">
+        <view>
+            <image class="index_btn_pic" src="{{meBtnSrc}}"></image>
+        </view>
+        <view>我的</view>
+    </view>
+</view>
+
+
+<!-- 医护端 -->
+<!-- <scroll-view >
+    <view>
+        <view>个人中心</view>
+        <view>认证中心</view>
+        <view>我的积分</view>
+        <view>邀请好友</view>
+    </view>
+    <view>
+        <view>学习交流区</view>
+        <view>考试交流区</view>
+        <view>资源区</view>
+    </view>
+    <view>
+        <view>公司愿景</view>
+        <view>社会招聘</view>
+        <view>校园招聘</view>
+        <view>人才发展</view>
+        <view>薪酬福利</view>
+    </view>
+    <view>
+        <view>任务中心</view>
+        <view>进行中</view>
+        <view>已完成</view>
+    </view>
+</scroll-view>
+<view>
+    <view>首页</view>
+    <view>任务</view>
+    <view>我的</view>
+</view> -->
+
+<!-- <scroll-view id="room" 
+class="comments_area" 
+bindscroll="scroll" 
+enable-back-to-top = "true"
+bind:touchstart="scrollTouchAction" 
+scroll-with-animation="true" 
+scroll-into-view="{{cate}}"
+scroll-y="true" 
+style="height:{{DeviceHeight}};" 
+    >
+    <view>
+        <view class="comment_line" wx:for="{{room_data}}" wx:for-index="idx" wx:for-item="itemName" id="{{itemName[0]}}">
+            <view class="comment_line_time">
+                <text>{{itemName[5]}}</text>
+            </view>
+            <view class="comment_line_user">
+                <image class="user_image" src="{{itemName[4]}}"></image>
+                <view class="comment_line_name">{{itemName[3]}}</view>
+            </view>
+            <view class="comment_line_content">
+                <scroll-view class="comment_line_content_main" style="{{itemName[2].length<13?'width:calc(40rpx * '+itemName[2].length+')':'width:auto'}}">
+                    <text>{{itemName[2]}}</text>
+                </scroll-view>
+                <view class="comment_line_content_main_top"></view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="input_tools" style="{{inputMarBot?'bottom:0rpx':'bottom:0rpx'}}">
+<view class="input_tool tool_word">
+    <button class="tool_audio_btn">切语</button>
+    <textarea class="tool_word_content" placeholder="发表你的伟大言论" adjust-position="true" auto-height="true" cursor-spacing="500" fixed="true" bindfocus="settingMbShow" bindblur="settingMbNoShow"></textarea>
+    <button class="tool_word_submit">发布</button>
+    </view>
+</view> -->
+
+

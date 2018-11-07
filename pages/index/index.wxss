@@ -22,10 +22,10 @@ html{
 .room_line_img{
     padding-bottom: 5rpx;
 }
-.room_area_king,.rooms_area_top{
+.room_area_delikang,.room_area_king,.rooms_area_top{
     background-color: #f2f2f2;
 }
-.room_area_king,.rooms_area_top,.rooms_area_default{
+.room_area_delikang,.room_area_king,.rooms_area_top,.rooms_area_default{
     width: 100%;
     padding: 0;
     margin: 0;

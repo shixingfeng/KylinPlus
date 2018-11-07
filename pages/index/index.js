@@ -5,11 +5,20 @@ Page({
   data: {
     data:{
       "share_ad_view_hidden":false,
+      "room_app_ids":["DELIKANG"],
       "room_king_ids":["MAGICCRYSTAL"],
       "room_top_ids":["MAGICCRYSTAL"],
       "room_default_ids":["MAGICCRYSTAL1"],
-      "room_ids":["MAGICCRYSTAL","MAGICCRYSTAL1"],
+      "room_ids":["DELIKANG","MAGICCRYSTAL","MAGICCRYSTAL1",],
       "room_info":{
+        "DELIKANG":{
+          "room_title":"德理康小程序入口",
+          "room_description":"快进来，老夏不会打你的",
+          "room_updatetime":"1539666746",
+          "room_notification":false,
+          "room_line_content_count":1000,
+          "room_line_img_url":"http://image.hotpoor.org/2dd2c53e7c654c66b398e574848d4c34_bf31e4a8228408536fceb70a49495865?imageView2/2/w/200"
+        },
         "MAGICCRYSTAL":{
           "room_title":"麒麟Plus粉丝团",
           "room_description":"麒麟Plus粉丝团，关注《创业时代》，为主创打Call！",
@@ -166,6 +175,14 @@ Page({
     wx.navigateTo({
       url:"/pages/room/index?room_id="+room_id+"&room_title="+room_title
     })
-  }
+  },
 
+  enterDelikang:function(e){
+    console.log(app.globalData)
+    var room_id = e.currentTarget.id
+    var room_title = this.data.data.room_info[room_id].room_title
+    wx.navigateTo({
+      url:"/pages/app_delikang/index?room_id="+room_id+"&room_title="+room_title
+    })
+  }
 })

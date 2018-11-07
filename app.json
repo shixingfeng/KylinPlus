@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/room/index",
     "pages/setting/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/app_delikang/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
