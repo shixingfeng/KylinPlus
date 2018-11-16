@@ -75,7 +75,7 @@
             </view>
             
             <view class="serve_submenus serve_titles">
-                <view>预约订单</view>
+                <view>预约订单-bug fixed</view>
                 <view class="serve_types serve_names">
                     <view class="serve_types_images">
                         <image src="{{ resevationPageIcons.reservationdoctorTreatment }}"></image>
