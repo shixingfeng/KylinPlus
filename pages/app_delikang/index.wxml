@@ -60,7 +60,7 @@
         </view>
         <view class="serve_select">
             <view class="serve_menus serve_titles">
-                <view>服务选择</view>
+                <view>服务选择-editing</view>
                 <view class="serve_types serve_names">
                     <view class="serve_types_images">
                         <image src="{{ resevationPageIcons.reservationdoctorTreatment }}"></image>
