@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<wxs src="index.wxs" module="tools" />
+<view>账户余额</view>
+<view>优惠券</view>
+<view>我的积分</view>
+<view></view>

@@ -4,7 +4,10 @@
     "pages/room/index",
     "pages/setting/index",
     "pages/logs/logs",
-    "pages/app_delikang/index"
+    "pages/app_delikang/index",
+    "pages/app_delikang/app_delikang_personal_setting/index",
+    "pages/app_delikang/app_delikang_customer_account/index",
+    "pages/app_delikang/app_delikang_message_list/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

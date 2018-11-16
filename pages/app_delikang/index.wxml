@@ -1,121 +1,215 @@
-<!--index.wxml-->
 <wxs src="index.wxs" module="tools" />
-<!-- 病人端 -->
- <scroll-view class="customer_page">
-    <view class="index_page" style="{{currentPage=='index_page'?'':'display:none'}}">
-        <view>我来问</view>
-        <view>大家问</view>
-        <view>小百科</view>
-        <view>在线坐诊</view>
+
+<scroll-view class="main">
+    
+    <view class="home_page" style="{{currentPage.currentPage=='home_page'?'':'display:none'}}">
+        <!-- 页面滑动展示 -->
+        <swiper indicator-dots="{{topSwiperImages.indicatorDots}}"
+                autoplay="{{topSwiperImages.autoplay}}"
+                interval="{{topSwiperImages.interval}}"
+                duration="{{topSwiperImages.duration}}"
+                circular="{{topSwiperImages.circular}}">
+            <block wx:for="{{topSwiperImages.imgUrls}}" wx:key="*this">
+                <swiper-item>
+                    <image class="homepage_top_slide_images" src="{{item}}"  width="355" height="150"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <!-- 四个展示框 -->
+        <view class="homepage_menus">
+            <view class="my_question homepage_menu ">
+                <view class="images_icons">
+                    <image src="{{homePageIcons.myQuestion}}"></image>
+                </view>
+                <view>我来问</view>
+            </view>
+            <view class="all_aquestion homepage_menu ">
+                <view class="images_icons">
+                    <image src="{{homePageIcons.allQuestion}}"></image>
+                </view>
+                <view>大家问</view>
+            </view>
+        </view>
+        
+        <view class="homepage_menus">
+            <view class="encyclopaedia homepage_menu ">
+                <view class="images_icons">
+                    <image src="{{homePageIcons.encyclopaedia}}"></image>
+                </view>
+                <view>小百科</view>
+            </view>
+            <view class="inquire_online homepage_menu ">
+                <view class="images_icons">
+                    <image src="{{homePageIcons.inquireOnline}}"></image>
+                </view>
+                <view>在线问诊</view>
+            </view>
+        </view>
     </view>
-    <view class="index_reservation_page" style="{{currentPage=='index_reservation_page'?'':'display:none'}}">
-        <view>服务选择</view>
-        <view>预约订单</view>
-        <view>支付</view>
-        <view>售后处理</view>
-        <view>评价</view>
+    
+    <view class="reservation_page" animation="{{animationData}}" wx:if="{{showModalStatus}}">
+        <view class="results_confirm">
+            <view class="results_title serve_titles">您选择的服务</view>
+            <view class="results_contents">
+                <view class="results_content serve_names">诊疗服务</view>
+                <view class="results_content serve_names">问诊服务</view>
+                <view class="results_content serve_names">具体内容</view>
+                <view class="results_content serve_names">起止时间</view>
+                <view class="results_content serve_names">票据信息</view>
+            </view> 
+        </view>
+        <view class="serve_select">
+            <view class="serve_menus serve_titles">
+                <view>服务选择</view>
+                <view class="serve_types serve_names">
+                    <view class="serve_types_images">
+                        <image src="{{ resevationPageIcons.reservationdoctorTreatment }}"></image>
+                        <view>诊疗</view>
+                    </view>
+
+                    <view class="serve_types_images">
+                        <image src="{{ resevationPageIcons.reservationDoctorIquire }}"></image>
+                        <view>问诊</view>    
+                    </view>
+                </view>
+            </view>
+            
+            <view class="serve_submenus serve_titles">
+                <view>预约订单</view>
+                <view class="serve_types serve_names">
+                    <view class="serve_types_images">
+                        <image src="{{ resevationPageIcons.reservationdoctorTreatment }}"></image>
+                        <view>内科</view>
+                    </view>
+                    <view class="serve_types_images">
+                        <image src="{{ resevationPageIcons.reservationDoctorIquire }}"></image>
+                        <view>外科</view>    
+                    </view>
+                    <view class="serve_types_images">
+                        <image src="{{ resevationPageIcons.reservationDoctorIquire }}"></image>
+                        <view>心理</view>    
+                    </view>
+                    <view class="serve_types_images">
+                        <image src="{{ resevationPageIcons.reservationDoctorIquire }}"></image>
+                        <view>泌尿</view>    
+                    </view>
+                    <view class="serve_types_images">
+                        <image src="{{ resevationPageIcons.reservationDoctorIquire }}"></image>
+                        <view>神经</view>    
+                    </view> 
+                </view>
+            </view>
+            
+            <view class="serve_info serve_titles">
+                <view class="serve_info_time">
+                    <view>时间</view>
+                    <view class="serve_names">2018/11/13</view>
+                </view>
+                <view class="serve_info_sites">
+                    <view>地点</view>
+                    <view class="serve_names">上海·宝山</view>
+                </view>
+                <view class="serve_info_notes">
+                    <view>备注</view>
+                    <input class="serve_names" placeholder="请简单描述需求" fixed="true" adjust-position="true" cursor-spacing="500" />
+                </view>
+                
+            </view>
+        </view>
+
+        <view class="pay">
+            <button class="pay_btn">支付</button>
+        </view>
+        <view class="exit"
+              bindtap="hideModal"
+              data-page="{{currentPage.currentPage_title}}">
+            <image class="exit_images" src="{{resevationPageIcons.reservationQuit}}"></image>
+        </view>
     </view>
-    <view class="index_me_page" style="{{currentPage=='index_me_page'?'':'display:none'}}">
-        <view>个人中心</view>
-        <view>我的病历</view>
-        <view>治疗方案</view>
-        <view>我的账户</view>
-        <view>邀请好友</view>
-        <view>消息提醒</view>
-        <view>信息列表</view>
+
+    <view class="user_info" style="{{currentPage.currentPage=='user_info_page'?'':'display:none'}}">
+        <view class="user_info_wrapper" bind:tap="enterPersonalSetting">
+            <view class="user_images">
+                <image class="avatar" src='{{userInfo.avatarUrl}}'></image>
+            </view>
+            <view class="messages_images" bind:tap="enterMessageList" >
+                <image src="{{userInfoPageIcons.messageIcon}}"></image>
+            </view>
+            <view class="user_nickname">{{userInfo.nickName}}</view>
+        </view>
+        <view class="user_account" bind:tap="enterCustomerAccount">
+            <view class="account_remainder account_wrapper">
+                <view>0.00</view>
+                <view>账户余额(元)</view>
+            </view>
+            <view class="account_discount account_wrapper">
+                <view>0</view>
+                <view>优惠券(张)</view>
+            </view>
+            <view class="account_integral account_wrapper">
+                <view>100</view>
+                <view>积分</view>
+            </view>
+        </view>
+        <view class="user_info_cards">        
+            <view class="user_info_cards_wrapper">
+                <view class="cards_images">
+                    <image src="{{userInfoPageIcons.healthRecords}}"></image>
+                </view>
+                <view class="cards_names">健康档案</view>
+                <view class="cards_contents">{{useCount.myHealthRecords}}></view>
+            </view>
+            <view class="user_info_cards_wrapper">
+                <view class="cards_images">
+                    <image src="{{userInfoPageIcons.cureRecords}}"></image>
+                </view>
+                <view class="cards_names">治疗方案</view>
+                <view class="cards_contents">{{useCount.cureRecords}}></view>
+            </view>
+            <view class="user_info_cards_wrapper">
+                <view class="cards_images">
+                    <image src="{{userInfoPageIcons.afterSales}}"></image>
+                </view>
+                <view class="cards_names">售后处理</view>
+                <view class="cards_contents">{{useCount.myHealthRecords}}></view>
+            </view>
+            <view class="user_info_cards_wrapper">
+                <view class="cards_images">
+                    <image src="{{userInfoPageIcons.myComments}}"></image>
+                </view>
+                <view class="cards_names">服务评价</view>
+                <view class="cards_contents">{{useCount.myHealthRecords}}></view>
+            </view>
+            <view class="user_info_cards_wrapper">
+                <view class="cards_images">
+                    <image src="{{userInfoPageIcons.invited}}"></image>
+                </view>
+                <view class="cards_names">邀请</view>
+                <view class="cards_contents">{{useCount.myInvited}}></view>
+            </view>
+        </view>
     </view>
 </scroll-view>
 
-<view class="index_btns">
-    <view data-page="index_page" class="index_btn" bindtap="showPage">
-        <view>
-            <image class="index_btn_pic" src="{{indexBtnSrc}}"></image>
+<view class="footer">
+    <view class="footer_btns" data-page="home_page"  bindtap="showPage">
+        <view class="btns_images_wrapper">
+            <image class="btns_images" src="{{indexBtns.indexBtnSrc}}"></image>
         </view>
         <view>首页</view>    
     </view>
-    <view data-page="index_reservation_page" class="index_btn" bindtap="showPage">
-        <view class="index_btn_pic_reservation">
-            <view class="index_btn_pic_bgcolor">
-                <image src="{{reservationBtnSrc}}"></image>
+    <view class="footer_btns" data-page="index_reservation_page"  bindtap="showModal">
+        <view class="reservation_page_btn">
+            <view class="reservation_btn_image">
+                <image src="{{indexBtns.reservationBtnSrc}}"></image>
             </view>
         </view>
         <view>预约</view>
     </view>
-    <view data-page="index_me_page" class="index_btn" bindtap="showPage">
-        <view>
-            <image class="index_btn_pic" src="{{meBtnSrc}}"></image>
+    <view class="footer_btns" data-page="user_info_page" bindtap="showPage">
+        <view class="btns_images_wrapper">
+            <image class="btns_images" src="{{indexBtns.meBtnSrc}}"></image>
         </view>
         <view>我的</view>
     </view>
 </view>
-
-
-<!-- 医护端 -->
-<!-- <scroll-view >
-    <view>
-        <view>个人中心</view>
-        <view>认证中心</view>
-        <view>我的积分</view>
-        <view>邀请好友</view>
-    </view>
-    <view>
-        <view>学习交流区</view>
-        <view>考试交流区</view>
-        <view>资源区</view>
-    </view>
-    <view>
-        <view>公司愿景</view>
-        <view>社会招聘</view>
-        <view>校园招聘</view>
-        <view>人才发展</view>
-        <view>薪酬福利</view>
-    </view>
-    <view>
-        <view>任务中心</view>
-        <view>进行中</view>
-        <view>已完成</view>
-    </view>
-</scroll-view>
-<view>
-    <view>首页</view>
-    <view>任务</view>
-    <view>我的</view>
-</view> -->
-
-<!-- <scroll-view id="room" 
-class="comments_area" 
-bindscroll="scroll" 
-enable-back-to-top = "true"
-bind:touchstart="scrollTouchAction" 
-scroll-with-animation="true" 
-scroll-into-view="{{cate}}"
-scroll-y="true" 
-style="height:{{DeviceHeight}};" 
-    >
-    <view>
-        <view class="comment_line" wx:for="{{room_data}}" wx:for-index="idx" wx:for-item="itemName" id="{{itemName[0]}}">
-            <view class="comment_line_time">
-                <text>{{itemName[5]}}</text>
-            </view>
-            <view class="comment_line_user">
-                <image class="user_image" src="{{itemName[4]}}"></image>
-                <view class="comment_line_name">{{itemName[3]}}</view>
-            </view>
-            <view class="comment_line_content">
-                <scroll-view class="comment_line_content_main" style="{{itemName[2].length<13?'width:calc(40rpx * '+itemName[2].length+')':'width:auto'}}">
-                    <text>{{itemName[2]}}</text>
-                </scroll-view>
-                <view class="comment_line_content_main_top"></view>
-            </view>
-        </view>
-    </view>
-</scroll-view>
-<view class="input_tools" style="{{inputMarBot?'bottom:0rpx':'bottom:0rpx'}}">
-<view class="input_tool tool_word">
-    <button class="tool_audio_btn">切语</button>
-    <textarea class="tool_word_content" placeholder="发表你的伟大言论" adjust-position="true" auto-height="true" cursor-spacing="500" fixed="true" bindfocus="settingMbShow" bindblur="settingMbNoShow"></textarea>
-    <button class="tool_word_submit">发布</button>
-    </view>
-</view> -->
-
-

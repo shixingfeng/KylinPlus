@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<wxs src="index.wxs" module="tools" />
+<view>公告</view>
+<view>互动消息</view>
+<view>为您推荐</view>

@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<wxs src="index.wxs" module="tools" />
+<view>昵称</view>
+<view>姓名</view>
+<view>单位</view>
+<view>手机</view>

@@ -1,23 +1,282 @@
 /**index.wxss**/
 page{
-  height: 100%;
-  background-color:#fefefe;
-  margin: 0;
-  padding: 0;
+      height: 100%;
+      background-color:#fefefe;
+      margin: 0;
+      padding: 0;
+}
+.main{
+    display:flex;
+    flex-direction: row;
 }
 
-.customer_page{
+/*homepage*/
+.home_page{
+
+}
+.homepage_top_slide_images{
+    width: 100%;
+    height: 100%;
+    margin: 0rpx;
+    padding: 0rpx;
+
+}
+.homepage_menus{
+    display: flex;
+    margin:20rpx 20rpx;
+    color: #fff;
+    text-align: center;
+}
+.homepage_menu{
+    height: 240rpx;
+    width: 480rpx;
+    display: flex;
+    flex-direction: column;
+}
+.images_icons{
+    margin-top:32rpx;
+}
+.images_icons>image{
+    height: 120rpx;
+    width: 120rpx;
+}
+.my_question{
+    background: #1ca3e3;
+    margin-right: 10rpx;
+}
+.all_aquestion{
+    background: #2abfd2;
+    margin-left: 10rpx;
+}
+.encyclopaedia{
+    background: #3cd085;
+    margin-right: 10rpx;
+}
+.inquire_online{
+    background: #1885e2;
+    margin-left: 10rpx;
 }
 
-.status_controls{
-    display: none;
+
+/*reservation*/
+.reservation_page{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    background: #fff;
+    padding-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    margin: 0rpx;
+}
+.results_confirm{
+    height: 35%;
+    width: 100%;
+    background: #f3f3f3;
+}
+.results_title{
+    margin-top:20rpx;
+    margin-left:40rpx;
+    font-size: 26rpx;
+}
+.results_contents{
+    margin-top:10rpx;
+    margin-left:40rpx;
+    font-size: 34rpx;
+}
+.results_content{
 }
 
+.serve_titles{
+    color:#cbcaca;
+}
+.serve_names{
+    color:#6c6658 ;
+}
 
+.serve_select{
+    height:45%;
+    background:#ffffff;
+    font-size:26rpx;
+    color:#cbcaca;
+    margin:40rpx 40rpx 0rpx 40rpx;
+    display:flex;
+    flex-direction:column;
+}
 
+.serve_menus{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33%;
+}
+.serve_types{
+    width: 100%;
+    display: flex;
+}
+.serve_types_images{
+    height:64rpx;
+    width:64rpx;
+}
+.serve_types_images>image{
+    height: 100%;
+    width: 100%;
+}
 
+.serve_submenus{
+    margin-top:10rpx;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33%;
+}
+.serve_info{
+    display: flex;
+    margin-top: 30rpx;
+    flex-basis: 20%;
+}
+.serve_info_time{
+    flex-basis: 20%;
+    margin-right: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+.serve_info_sites{
+    flex-basis: 20%;
+    margin-right: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+.serve_info_notes{
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.pay{
 
-.index_btns{
+}
+.pay_btn{
+    background:#87d280;
+    color:#ffffff;
+    width:80%;
+    margin-top: 30rpx;
+}
+.exit{
+    height:80rpx;
+    width:80rpx;
+    position:relative;
+    left:44%;
+    margin-top:40rpx;
+    background:#cccc;
+    border-radius:35rpx;
+}
+.exit_images{
+    height: 100%;
+    width: 100%;
+}
+
+.serve_menus,
+.serve_submenus,
+.serve_info_time,
+.serve_info_sites,
+.serve_info_notes{
+    border-bottom: 1rpx solid #cccccc;
+}
+
+/*userinfo*/
+.user_info{
+    background: #f4f4f4;
+}
+.user_info_wrapper{
+    display: flex;
+    box-shadow:2rpx 2rpx 2rpx rgba(0,0,0,0.3);
+    height:160rpx;
+    background: #5cb9a4;
+    color: #ffffff;
+}
+.user_images{
+    height:120rpx;
+    width:120rpx;
+    margin:20rpx 20rpx 20rpx 20rpx;
+}
+.avatar{
+    width: 100%;
+    height: 100%;
+    border-radius:100rpx;
+}
+.messages_images{
+    position:absolute;
+    right:40rpx;
+    top:48rpx;
+    height: 60rpx;
+    width: 60rpx;
+}
+.messages_images>image{
+    height: 100%;
+    width: 100%;
+}
+.user_nickname{
+    margin-top:48rpx;
+    font-size:44rpx;
+}
+.health_records{
+    display: flex;
+    position:relative;
+}
+.user_account{
+    height: 100rpx;
+    background: #5cb9a4;
+    display: flex;
+}
+.account_wrapper{
+    display:flex;
+    flex-direction:column;
+    flex-basis:34%;
+    text-align:center;
+    font-size:32rpx;
+    color:#ffff
+}
+.user_info_cards{
+    display: flex;
+    flex-direction: column;
+    margin: 20rpx 0rpx;
+    background: #ffffff;
+}
+.user_info_cards_wrapper{
+    display: flex;
+    margin-left:20rpx;
+    background:#ffffff;
+    border-bottom:1rpx solid #ebebeb;
+    height:104rpx;
+    width:100%;
+    position: relative;
+}
+.cards_images{
+    height:48rpx;
+    width:48rpx;
+    border-radius:100rpx;
+    margin:32rpx 20rpx;
+}
+.cards_images>image{
+    height: 100%;
+    width: 100%;
+}
+.cards_names{
+    margin:28rpx 20rpx 0rpx 20rpx;
+    height: 48rpx;
+    font-size: 36rpx;
+}
+.cards_contents{
+    position:absolute;
+    right:40rpx;
+    top:28rpx;
+    color:#cccccc;
+}
+
+/*footer*/
+.footer{
     position: fixed;
     left: 0rpx;
     bottom: 0rpx;
@@ -27,27 +286,19 @@ page{
     background-color: #fefefe;
     display: flex;
 }
-
-.index_btn{
+.footer_btns{
     flex-basis:33%;
-    position:relative;
-    width:100%;
-    min-height:80rpx;
     text-align:center;
     font-size:24rpx;
     color:grey;
-    display:flex;
-    flex-direction:column;
     margin-top:30rpx;
     margin-bottom:0rpx;
 }
-
-.index_btn_pic{
+.btns_images{
   height: 64rpx;
   width: 64rpx;
 }
-
-.index_btn_pic_reservation{
+.reservation_page_btn{
     height:120rpx;
     width:120rpx;
     border-radius:100rpx;
@@ -57,175 +308,19 @@ page{
     border:1rpx solid #fff;
     box-shadow:0rpx -12rpx 18rpx -10rpx rgba(0,0,0,0.2);
 }
-
-.index_btn_pic_bgcolor{
+.reservation_btn_image{
   height:100%;
   width:100%;
   background:#fff;
   border-radius:100rpx;
   overflow: hidden;
-
 }
-.index_btn_pic_bgcolor>image{
+.reservation_btn_image>image{
   width: 100%;
   height: 100%;
   border-radius: 100rpx;
   overflow: hidden;
-  
 }
 
 
 
-
-
-
-
-
-
-
-
-.input_tools{
-  position: fixed;
-  left: 0rpx;
-  bottom: 0rpx;
-  width: 100%;
-  min-height: 120rpx;
-  box-shadow: 0rpx 0rpx 4rpx rgba(0,0,0,0.2);
-  background-color: #f2f2f2;
-}
-.input_tool{
-  position: relative;
-  width: 100%;
-  min-height: 80rpx;
-  padding-bottom: 30rpx;
-}
-.tool_audio_btn{
-  width: 80rpx;
-  height: 80rpx;
-  font-size: 20rpx;
-  position: absolute;
-  left: 10rpx;
-  bottom: 10rpx;
-}
-.tool_word_content{
-  background-color: #fff;
-  position: relative;
-  left: 100rpx;
-  bottom: 10rpx;
-  box-shadow: 0rpx 0rpx 0rpx 2rpx rgba(0,0,0,0.1);
-  width: calc(100% - 300rpx - 20rpx);
-  min-height: calc(80rpx - 8rpx);
-  border-radius: 8rpx;
-  padding: 6rpx 10rpx 2rpx 10rpx;
-  font-size: 28rpx;
-  color: #333;
-  height: calc(80rpx - 8rpx);
-  max-height: calc((80rpx - 8rpx) * 3);
-  top:20rpx;
-  line-height: 36rpx;
-}
-.tool_word_submit{
-  position: absolute;
-  right: 10rpx;
-  bottom: 10rpx;
-  width: 180rpx;
-  height: 80rpx;
-}
-
-.comments_area{
-    padding-bottom:120rpx;
-    position: /*relative*/;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling:touch;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: #f2f2f2;
-}
-
-.comment_line{
-  width:100%;
-  position: relative;
-}
-.comment_line_time{
-  text-align: center;
-  margin-top: 20rpx;
-}
-.comment_line_time>text{
-  height: 28rpx;
-  font-size: 24rpx;
-  background-color: rgba(100,100,100,0.5);
-  color: #fff;
-  text-align: center;
-  border-radius: 8rpx;
-  padding: 4rpx 12rpx;
-
-}
-
-.comment_line_user{
-  margin-left: 20rpx;
-  margin-top: 20rpx;
-  position: relative;
-}
-.user_image{
-    height: 80rpx;
-    width: 80rpx;
-    position: absolute;
-    left: 0rpx;
-    top: 0rpx;
-}
-
-.comment_line_name{
-    width:300rpx;
-    color: #777;
-    font-weight: bold;
-    font-size: 24rpx;
-    line-height: 24rpx;
-    margin-left: 105rpx;
-    margin-bottom: 16rpx;
-}
-
-.comment_line_content{
-    min-width: 220rpx;
-    width: auto;
-    max-width: calc(75% - 100rpx);
-    margin-left: 125rpx;
-    position: relative;
-    padding-bottom: 10rpx;
-}
-.comment_line_content>.comment_line_content_main{
-    background-color: white;
-    font-size: 32rpx;
-    color: #333;
-    box-shadow: 0rpx 0rpx 0rpx 2rpx rgba(200,200,200,1);
-    border-radius: 8rpx;
-    min-width: 64rpx;
-    width: auto;
-    padding: 15rpx 16rpx;
-    min-height: 40rpx;
-}
-.comment_line_content_main_bottom{
-    position: absolute;
-    transform: rotate(45deg);
-    width: 20rpx;
-    height: 20rpx;
-    border-radius: 8rpx;
-    background-color: rgba(200,200,200,1);
-    left: -5rpx;
-    top: 10rpx;
-}
-.comment_line_content_main_top{
-    position: absolute;
-    transform: rotate(-45deg);
-    width: 20rpx;
-    height: 20rpx;
-    border-radius: 0rpx;
-    background-color: #fff;
-    box-shadow: 2rpx 2rpx 0rpx 0rpx rgba(200,200,200,1) inset;
-    left: -10rpx;
-    top: 28rpx;
-}
-.room{
-    height: 100%;
-    overflow: hidden;
-}
